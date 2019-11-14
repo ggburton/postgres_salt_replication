@@ -14,3 +14,9 @@ master-postgres:
     ]
     - environment:
         PGDATA: /data/postgres-data-dir
+
+
+create_replication_user:
+  cmd.run:
+    - name: "docker exec -it postgres-master /bin/bash -c 'createuser -h localhost -U postgres -S -D -R -P --replication -e wal WITH PASSWORD "123!@#qweQWE"'"
+    - failhard: True
