@@ -2,11 +2,17 @@ postgres:
   docker_image.present:
     - tag: 12
 
+postgres_user:
+  user.present:
+    - uid: 999
+    - name: postgres
+    - shell: /usr/sbin/nologin
+
 /data:
   file.managed:
     - mode: 644
-    - user: '999'
-    - group: '999'
+    - user: postgres
+    - group: postgres
 
 test-postgres:
   docker_container.running:
