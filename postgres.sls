@@ -1,3 +1,4 @@
-pull-postgres:
-  dockerng.image_present:
+postgres:
+  dockerng.running:
+    - name: test-postgres
     - image: postgres:12
