@@ -1,2 +1,2 @@
-dockerng.pull:
+dockerng.image_present:
   - image: postgres:12
