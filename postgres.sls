@@ -10,7 +10,7 @@ postgres_user:
 
 /data/postgres-data-dir/:
   file.directory:
-    - mode: 700
+    - mode: 755
     - user: postgres
     - group: root
     - makedirs: True
@@ -23,7 +23,6 @@ test-postgres:
     - binds:
       - /srv/postgres-data:/data/postgres-data-dir
       - /srv/postgres-wal-dir:/data/postgres-wal-dir
-    - user: postgres
     - command: [
         "postgres",
         "-carchive_mode=on",
