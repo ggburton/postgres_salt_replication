@@ -8,11 +8,11 @@ postgres_user:
     - name: postgres
     - shell: /usr/sbin/nologin
 
-/data:
+/data/postgres-data-dir/:
   file.directory:
-    - mode: 755
+    - mode: 700
     - user: postgres
-    - group: postgres
+    - group: root
     - makedirs: True
 
 test-postgres:
