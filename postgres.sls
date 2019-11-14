@@ -9,10 +9,11 @@ postgres_user:
     - shell: /usr/sbin/nologin
 
 /data:
-  file.managed:
+  file.directory:
     - mode: 644
     - user: postgres
     - group: postgres
+    - makedirs: True
 
 test-postgres:
   docker_container.running:
