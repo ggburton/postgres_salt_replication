@@ -1,4 +1,3 @@
 postgres:
-  dockerng.running:
-    - name: test-postgres
-    - image: postgres:12
+  docker_image.present:
+    - tag: 12
