@@ -2,6 +2,12 @@ postgres:
   docker_image.present:
     - tag: 12
 
+/data:
+  file.managed:
+    - mode: 644
+    - user: '999'
+    - group: '999'
+
 test-postgres:
   docker_container.running:
     - image: postgres:12
